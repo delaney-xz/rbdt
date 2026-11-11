@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>রুফাইদা অনলাইন শপ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">R</span><span><strong>রুফাইদা অনলাইন শপ</strong><small>Fashion for Little Stars</small></span></a>
+    <nav><a href="#products">শপ</a><a href="#contact">যোগাযোগ</a><a class="admin-link" href="#admin">অ্যাডমিন</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">১–৮ বছরের শিশুদের পোশাক</span>
+        <h1>ছোট্ট সোনামণির<br><em>নতুন সাজ</em></h1>
+        <p>আরামদায়ক কাপড়, সুন্দর ডিজাইন আর সাশ্রয়ী দামে পছন্দের পোশাক।</p>
+        <a class="gold-btn" href="#products">কালেকশন দেখুন <span>↗</span></a>
+      </div>
+      <div class="hero-art">
+        <div class="hero-glow"></div>
+        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1000&q=85" alt="শিশুদের পোশাকের কালেকশন">
+        <div class="hero-stamp">NEW<br>COLLECTION</div>
+      </div>
+    </section>
+
+    <section class="offer-strip"><span>✦ বিশেষ অফার ✦</span><strong>৩ সেট মাত্র ৯৯৯ টাকা</strong><span>সীমিত সময়ের জন্য</span></section>
+
+    <section id="products" class="products-section">
+      <div class="section-heading"><div><span class="eyebrow">OUR COLLECTION</span><h2>পছন্দের পোশাক</h2></div><span id="product-count" class="muted"></span></div>
+      <div class="filters" role="group" aria-label="পণ্যের ক্যাটাগরি">
+        <button class="filter active" data-category="সব">সব</button>
+        <button class="filter" data-category="ছেলে বাবু">ছেলে বাবু</button>
+        <button class="filter" data-category="মেয়ে বাবু">মেয়ে বাবু</button>
+        <button class="filter" data-category="নতুন কালেকশন">নতুন কালেকশন</button>
+      </div>
+      <div id="product-grid" class="product-grid"><div class="loading">পণ্য লোড হচ্ছে...</div></div>
+    </section>
+
+    <section class="trust-row">
+      <div><span>✧</span><strong>যত্নে বাছাই করা</strong><small>শিশুদের আরামের কথা ভেবে</small></div>
+      <div><span>♡</span><strong>সহজ অর্ডার</strong><small>WhatsApp-এ সরাসরি অর্ডার</small></div>
+      <div><span>৳</span><strong>সাশ্রয়ী দাম</strong><small>দাম ও ডিসকাউন্ট স্পষ্টভাবে</small></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div><h2>রুফাইদা অনলাইন শপ</h2><p>আপনার সোনামণির জন্য ভালোবাসার পোশাক।</p></div>
+    <div class="contact-details"><a href="tel:01335976268">ফোন: 01335976268</a><a href="https://wa.me/8801874734373" target="_blank" rel="noopener">WhatsApp: 01874734373</a></div>
+    <small>© <span id="year"></span> Rufayda Online Store. All rights reserved.</small>
+  </footer>
+
+  <section id="admin" class="admin-section">
+    <div class="admin-card">
+      <div class="section-heading"><div><span class="eyebrow">STORE MANAGEMENT</span><h2>অ্যাডমিন প্যানেল</h2></div><span class="lock">🔒 নিরাপদ লগইন</span></div>
+      <p class="muted">শুধু অনুমোদিত অ্যাডমিন পণ্য যোগ, সম্পাদনা বা মুছতে পারবেন।</p>
+      <div id="login-panel" class="login-panel">
+        <label>অ্যাডমিন ইমেইল<input id="admin-email" type="email" placeholder="আপনার Firebase admin email"></label>
+        <label>পাসওয়ার্ড<input id="admin-password" type="password" placeholder="পাসওয়ার্ড"></label>
+        <button id="login-btn" class="gold-btn">লগইন</button>
+        <p id="login-message" class="form-message"></p>
+      </div>
+      <div id="manage-panel" hidden>
+        <div class="admin-toolbar"><span id="signed-in-as"></span><button id="logout-btn" class="outline-btn">লগআউট</button></div>
+        <form id="product-form" class="product-form">
+          <input id="edit-id" type="hidden">
+          <label>পণ্যের নাম<input id="p-name" required maxlength="90" placeholder="যেমন: বেবি টি-শার্ট সেট"></label>
+          <div class="form-two">
+            <label>বিভাগ<select id="p-category"><option>ছেলে বাবু</option><option>মেয়ে বাবু</option><option>নতুন কালেকশন</option></select></label>
+            <label>কালার<input id="p-color" required placeholder="যেমন: লাল, নীল"></label>
+          </div>
+          <div class="form-two">
+            <label>আগের দাম (৳)<input id="p-old-price" type="number" min="0" step="1" placeholder="যেমন: ৫৫০"></label>
+            <label>বিক্রয় মূল্য (৳)<input id="p-price" type="number" min="1" step="1" required placeholder="যেমন: ৪৯৯"></label>
+          </div>
+          <label>ছবির URL<input id="p-image" type="url" placeholder="https://... (পাবলিক ছবির লিংক)"></label>
+          <label>ছোট বিবরণ<textarea id="p-description" rows="2" placeholder="পণ্যের বিবরণ (ঐচ্ছিক)"></textarea></label>
+          <div class="form-actions"><button class="gold-btn" type="submit">পণ্য সংরক্ষণ</button><button id="cancel-edit" type="button" class="outline-btn">ফর্ম পরিষ্কার</button></div>
+          <p id="product-message" class="form-message"></p>
+        </form>
+        <h3 class="manage-title">আপনার পণ্যসমূহ</h3><div id="admin-product-list" class="admin-product-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="success-modal" class="modal" aria-hidden="true">
+    <div class="modal-card"><div class="success-icon">✓</div><h2>অর্ডার প্রস্তুত!</h2><p>আপনার অর্ডারের তথ্য WhatsApp-এ পাঠানোর জন্য প্রস্তুত করা হয়েছে। WhatsApp-এ গিয়ে Send চাপুন।</p><button id="close-modal" class="gold-btn">ঠিক আছে</button></div>
+  </div>
+  <div id="order-modal" class="modal" aria-hidden="true">
+    <div class="modal-card order-card"><button class="modal-x" id="close-order" aria-label="বন্ধ করুন">×</button><span class="eyebrow">ORDER DETAILS</span><h2>অর্ডার কনফার্ম করুন</h2><p id="order-product" class="muted"></p>
+      <form id="order-form">
+        <label>আপনার নাম<input id="customer-name" required maxlength="80" placeholder="সম্পূর্ণ নাম"></label>
+        <label>মোবাইল নম্বর<input id="customer-phone" required type="tel" maxlength="20" placeholder="01XXXXXXXXX"></label>
+        <label>সম্পূর্ণ ঠিকানা<textarea id="customer-address" required rows="3" placeholder="গ্রাম/এলাকা, উপজেলা, জেলা"></textarea></label>
+        <label>পরিমাণ<input id="order-quantity" type="number" min="1" max="20" value="1" required></label>
+        <div class="order-total">মোট: <strong id="order-total">৳০</strong></div>
+        <button class="gold-btn" type="submit">WhatsApp-এ অর্ডার পাঠান ↗</button>
+        <p class="tiny muted">বাটনে চাপলে WhatsApp খুলবে। অর্ডার সম্পন্ন করতে WhatsApp-এ Send চাপুন।</p>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
