@@ -3,7 +3,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
     function isAdmin() {
       return request.auth != null
-        && request.auth.token.email == "YOUR_ADMIN_EMAIL@example.com";
+        && request.auth.token.email == "jobad942@gmail.com";
     }
     match /products/{productId} {
       allow read: if true;
